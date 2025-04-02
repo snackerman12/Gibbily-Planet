@@ -10,10 +10,14 @@ public class CollectibleCheck : MonoBehaviour
     {
         if (other.GetComponent<Collectible>() != null)
         {
-            Debug.Log("Score");
             score++;
-            Collectible.spawning = true;
-
+            if (score <= 3)
+            {
+                Collectible.spawning = true;
+            } else {
+                Debug.Log("Score MAX");
+            }
+            
             StartCoroutine(DestroyPrefab());
         }
     }
