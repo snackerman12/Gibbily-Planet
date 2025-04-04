@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -13,15 +14,17 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (gamePaused)
+        if (CollectibleCheck.score < 3) {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (gamePaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
     }
@@ -31,7 +34,6 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gamePaused = false;
-        Debug.Log("Resume");
     }
 
     void Pause()

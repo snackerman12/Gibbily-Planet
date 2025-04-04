@@ -25,10 +25,10 @@ public class PointsTracker : MonoBehaviour
 
         for (int i = 0; i < scoreBar.Length; i++)
         {
-            if (i > CollectibleCheck.score) {
-                scoreBar[i].sprite = point;
-            } else {
+            if (i >= CollectibleCheck.score) {
                 scoreBar[i].sprite = emptyPoint;
+            } else {
+                scoreBar[i].sprite = point;
             }
 
             if (i < scoreNum){
