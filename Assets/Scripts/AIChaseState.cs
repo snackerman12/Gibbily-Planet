@@ -7,6 +7,7 @@ public class AIChaseState : AIState
      public override void EnterState(AIController ai)
     {
         ai.agent.speed = ai.chaseSpeed;
+        
     }
 
      public override void UpdateState(AIController ai)
