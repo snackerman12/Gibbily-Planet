@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Collectible : MonoBehaviour
 {
@@ -18,7 +19,9 @@ public class Collectible : MonoBehaviour
 
     void Update()
     {
-        spawnAtRandom();
+        if (CollectibleCheck.score <= 3){
+            spawnAtRandom();
+        }
     }
 
     void spawnAtRandom()

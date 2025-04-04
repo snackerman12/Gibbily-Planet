@@ -205,7 +205,7 @@ public class FirstPersonController : MonoBehaviour
         #region Camera
 
         // Control camera movement
-        if(cameraCanMove && !PauseMenu.gamePaused)
+        if(cameraCanMove && !PauseMenu.gamePaused && CollectibleCheck.score < 3)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
